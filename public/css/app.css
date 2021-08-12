@@ -1,4 +1,29 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+.header-btn {
+    margin: 20px 20px 20px 0;
+}
+.card {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemImagesBlock {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.itemImage {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    display: block;
+}
+
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)

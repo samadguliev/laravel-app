@@ -15,7 +15,7 @@ class MessageController extends Controller
     public function index()
     {
         try {
-            $data = Message::select('name', 'email')
+            $data = Message::select('id', 'name', 'email')
                 ->orderBy('created_at', 'desc')
                 ->paginate(2);
             return response()
