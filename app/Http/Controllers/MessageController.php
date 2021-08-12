@@ -76,11 +76,19 @@ class MessageController extends Controller
             if ($request->fields) {
                 $select = array_map('trim', explode(',', $request->fields));
             }
+            $data = Message::select($select)->find($id);
+            if ($data) {
+                return response()
+                    ->json([
+                        'success' => true,
+                        'message' => 'OK',
+                        'data' => $data
+                    ]);
+            }
             return response()
                 ->json([
-                    'success' => true,
-                    'message' => 'OK',
-                    'data' => Message::select($select)->find($id)
+                    'success' => false,
+                    'message' => 'No such element',
                 ]);
         } catch (\Exception $exception) {
             return response()
