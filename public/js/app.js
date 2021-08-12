@@ -2139,6 +2139,16 @@ function CreateElement() {
             return setText(e.target.value);
           }
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "form-check",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          className: "form-check-input",
+          type: "checkbox"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          className: "form-check-label",
+          htmlFor: "flexCheckDefault",
+          children: "I agree with processing of my personal data."
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
         onClick: submitHandler,
         children: "Submit"

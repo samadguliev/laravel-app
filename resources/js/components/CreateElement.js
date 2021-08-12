@@ -83,6 +83,13 @@ function CreateElement() {
                     />
                 </div>
 
+                <div className="form-check">
+                    <input className="form-check-input" type="checkbox" />
+                    <label className="form-check-label" htmlFor="flexCheckDefault">
+                        I agree with processing of my personal data.
+                    </label>
+                </div>
+
 
                 <button onClick={submitHandler}>Submit</button>
             </form>
