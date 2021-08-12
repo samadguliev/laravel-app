@@ -15,11 +15,14 @@ class MessageController extends Controller
     public function index()
     {
         try {
+            $data = Message::select('name', 'email')
+                ->orderBy('created_at', 'desc')
+                ->paginate(2);
             return response()
                 ->json([
                     'success' => true,
                     'message' => 'OK',
-                    'data' => Message::select('name', 'email')->paginate(2)
+                    'data' => $data
                 ]);
         } catch (\Exception $exception) {
             return response()
