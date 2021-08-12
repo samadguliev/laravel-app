@@ -17,7 +17,7 @@ class MessageController extends Controller
         try {
             $data = Message::select('id', 'name', 'email')
                 ->orderBy('created_at', 'desc')
-                ->paginate(2);
+                ->paginate(10);
             return response()
                 ->json([
                     'success' => true,

@@ -13,7 +13,7 @@ function CreateElement() {
     const submitHandler = () => {
         const formData = new FormData();
 
-        if (!(name && email && text)) {
+        if (!(name && email)) {
             return;
         }
         formData.append("name", name);
