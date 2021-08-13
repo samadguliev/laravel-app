@@ -2264,8 +2264,11 @@ function List() {
 
   var getList = function getList() {
     axios__WEBPACK_IMPORTED_MODULE_1___default()({
-      url: "".concat(_utils_strings_json__WEBPACK_IMPORTED_MODULE_2__.base_url, "/api/messages?page=").concat(page),
+      url: "".concat(_utils_strings_json__WEBPACK_IMPORTED_MODULE_2__.base_url, "/api/messages"),
       method: 'get',
+      params: {
+        page: page
+      },
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       }

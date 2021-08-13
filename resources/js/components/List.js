@@ -16,8 +16,11 @@ function List() {
 
     const getList = () => {
         axios({
-            url: `${strings.base_url}/api/messages?page=${page}`,
+            url: `${strings.base_url}/api/messages`,
             method: 'get',
+            params: {
+                page
+            },
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },

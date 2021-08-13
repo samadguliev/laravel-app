@@ -1,0 +1,156 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel app API",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/"
+        }
+    ],
+    "paths": {
+        "/api/messages": {
+            "get": {
+                "summary": "Получение информации о событии",
+                "operationId": "9d5effa2cb648df85be0ea9741ffb457",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Страница пагинации",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Возвращается ифно о событии под ключом item",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "Сообщение в случае ошибки",
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "description": "Массив элементов",
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Отправка сообщения",
+                "operationId": "db79bb7bcadfdb708e9f6c38ac928f4a",
+                "requestBody": {
+                    "description": "Параметры запроса: name, email, text",
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "Имя",
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "description": "E-mail",
+                                        "type": "string"
+                                    },
+                                    "text": {
+                                        "description": "Текст сообщения",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Возвращается объект с ключами success и id элемента",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "Сообщение в случ успеха/ошибки",
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "description": "Id созданного сообщения",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/messages/{id}": {
+            "get": {
+                "summary": "Получение информации о сообщении",
+                "operationId": "8938bb52056aef543d340164d37f9562",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id сообщения",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Возвращается ифно о событии сообщении",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "Сообщение",
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "description": "Поля элемента",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
