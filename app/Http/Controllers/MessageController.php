@@ -53,7 +53,7 @@ class MessageController extends Controller
                     'success' => true,
                     'message' => 'OK',
                     'data' => $data
-                ]);
+                ], 200);
         } catch (\Exception $exception) {
             return response()
                 ->json([
@@ -166,13 +166,13 @@ class MessageController extends Controller
                         'success' => true,
                         'message' => 'OK',
                         'data' => $data
-                    ]);
+                    ], 200);
             }
             return response()
                 ->json([
                     'success' => false,
                     'message' => 'No such element',
-                ]);
+                ], 404);
         } catch (\Exception $exception) {
             return response()
                 ->json([
